@@ -7,13 +7,11 @@ on:
     - cron:  '0 13 * * 1'
 
 jobs:
-  runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      python-version: [ 3.8 ]
-
   scheduled:
     runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          python-version: [ 3.8 ]
 
     steps:
     - uses: actions/checkout@v2
